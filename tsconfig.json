@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "target": "ES6", // 目标语言的版本
+    "module": "ESNext", // 生成代码的模板标准
+    "jsx": "preserve",
+    "strict": true, // 开启所有严格的类型检查
+    "moduleResolution": "node", // 模块解析策略，ts默认用node的解析策略，即相对的方式导入
+    "esModuleInterop": true, // 允许export=导出，由import from 导入
+    "skipLibCheck": true, // 忽略所有的声明文件（ *.d.ts）的类型检查
+    "forceConsistentCasingInFileNames": true, // 禁止对同一个文件的不一致的引用
+    "isolatedModules": true, // 将每个文件作为单独的模块
+    "noEmit": true, // 不输出文件,即编译后不会生成任何js文件
+    "types": ["vite/client", "vue"],
+    "paths": {
+      "@/*": ["./src/*"] // 路径别名
+    }
+  },
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
+  "exclude": ["node_modules"]
+}
