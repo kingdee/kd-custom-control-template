@@ -56,7 +56,8 @@ export interface TKDApi {
   nameSpace: (model: TCustomModel) => void
   register: (type: string, ctrl: (TCustomModel) => void, config?: TRegisterConfig) => void
   template: (tpl: string, data: IObject) => void
-  templateFilePath: (filePatch: string, model: TCustomModel, data: IObject) => void
+  templateFilePath: (filePatch: string, model: TCustomModel, data: IObject) => void,
+  getLangObj: (model: TCustomModel) => void
 }
 
 export interface IRoot {
