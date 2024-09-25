@@ -38,6 +38,12 @@ declare global {
       this.model = model
     },
 
+    // 旧版本update，如需使用去掉注释并且将onPropsUpdate注释即可
+    // update: function (this: ComponentInstance, props: TCustomProps) {
+    //   console.log('-----update', this.model, props)
+    //   eventBus.pub(this.model, 'update', props)
+    // },
+
     init: function (this: ComponentInstance, props: TCustomProps) {
       console.log('-----init', this.model, props)
       setHtml(this.model, props)
