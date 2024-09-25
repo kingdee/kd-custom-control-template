@@ -12,6 +12,11 @@
     _setModel: function (model) {
       this.model = model
     },
+    // 旧版本update，如需使用去掉注释并且将onPropsUpdate注释即可
+    // update: function (props) {
+    //   console.log('-----update', this.model, props)
+    // },
+
     init: function (props) {
       // TO DO
       initFunc(this.model, props)
