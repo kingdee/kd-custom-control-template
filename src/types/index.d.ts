@@ -29,9 +29,9 @@ export interface TCustomModel {
   dom: ReactDOM.Container | null
   fileServer: string
   injectAttachData: () => void
-  invoke: (eventName: string, eventArgs: any[]) => () => void
-  invokeAsync: (eventName: string, eventArgs: any[]) => () => void
-  invokeCustomMethod: (IObject) => (method: string, args: any[], isNoClearPostData: boolean) => void
+  invoke: (eventName: string, eventArgs: any[] | string) => () => void
+  invokeAsync: (eventName: string, eventArgs:  any[] | string) => () => void
+  invokeCustomMethod: (method: string, args:  any[] | string, isNoClearPostData?: boolean) => void
   isvId: string
   key: string
   lang: string
@@ -39,7 +39,7 @@ export interface TCustomModel {
   moduleId: string
   pageId: string
   schemaId: string
-  setPostData: (IObject) => void
+  setPostData: (postdata: any) => void
   userDataReporting: (IObject) => void
 }
 
