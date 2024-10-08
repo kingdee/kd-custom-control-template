@@ -9,7 +9,7 @@
     "preview": "vite preview",
     "build-only": "vite build",
     "type-check": "vue-tsc --build --force",
-    "server": "node ./server/index.cjs"
+    "server": "nodemon --watch server server/index.cjs"
   },
   "dependencies": {
     "less": "^4.2.0",
@@ -31,6 +31,8 @@
     "serve-index": "^1.9.1",
     "typescript": "~5.4.0",
     "vite": "^5.3.1",
-    "vue-tsc": "^2.0.21"
+    "vue-tsc": "^2.0.21",
+    "chokidar": "^4.0.1",
+    "vite-plugin-progress": "^0.0.7"
   }
 }
