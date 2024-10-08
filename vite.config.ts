@@ -4,6 +4,7 @@ import path from 'path'
 import { resolve } from 'path'
 import Components from 'unplugin-vue-components/vite'
 import { ElementUiResolver } from 'unplugin-vue-components/resolvers'
+import progress from 'vite-plugin-progress'
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
@@ -34,6 +35,7 @@ export default defineConfig(({ mode }) => {
       Components({
         resolvers: [ElementUiResolver()],
       }),
+      progress(),
     ],
     resolve: {
       alias: {
