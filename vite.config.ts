@@ -2,7 +2,7 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue2'
 import path from 'path'
 import { resolve } from 'path'
-
+import progress from 'vite-plugin-progress'
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
   let entryFile = ''
@@ -27,7 +27,7 @@ export default defineConfig(({ mode }) => {
         },
       },
     },
-    plugins: [vue()],
+    plugins: [vue(), progress()],
     resolve: {
       alias: {
         '@': path.resolve(__dirname, 'src'), // 将 '@' 指向 'src' 目录
