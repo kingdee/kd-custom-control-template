@@ -31,12 +31,6 @@ app.listen(3001, () => {
   console.log('CustomControl Static Server: http://localhost:3001 is Running!')
 })
 process.on('SIGINT', () => {
-  fs.remove(isvDir)
-    .then(() => {
-      process.exit(0)
-    })
-    .catch((err) => {
-      console.error('Error removing directory:', err)
-      process.exit(1)
-    })
+  fs.removeSync(isvDir)
+  process.exit(0)
 })
