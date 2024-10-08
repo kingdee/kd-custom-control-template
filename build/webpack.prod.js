@@ -7,19 +7,17 @@ const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 const CopyPlugin = require('copy-webpack-plugin')
 const WebpackBar = require('webpackbar')
 const serverConfig = require('../server/config.js')
-const { isvId, moduleId, schemaId } = serverConfig
-
-const IS_SERVER = false // 是否启用本地调试
+const { isvId, moduleId, schemaId, localServer } = serverConfig
 
 // 检查配置文件中的值是否为空
-if (IS_SERVER && (!isvId || !moduleId || !schemaId)) {
+if (localServer && (!isvId || !moduleId || !schemaId)) {
   console.error('配置文件 server/config.js 缺少必要的字段。')
   process.exit(1) // 退出进程
 }
 
 module.exports = merge(common, {
   mode: 'production',
-  watch: IS_SERVER,
+  watch: localServer,
   watchOptions: {
     ignored: /node_modules/, // 忽略某些目录
   },
