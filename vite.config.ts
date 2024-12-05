@@ -12,7 +12,7 @@ export default defineConfig(({ mode }) => {
   if (mode === 'development') {
     entryFile = resolve(__dirname, 'src/devIndex.ts') // 开发环境入口
   } else if (mode === 'production') {
-    entryFile = resolve(__dirname, 'src/prodIndex.ts') // 生产环境入口
+    entryFile = resolve(__dirname, 'src/index.ts') // 生产环境入口
   }
   return {
     build: {
