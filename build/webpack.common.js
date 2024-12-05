@@ -4,7 +4,7 @@ const isProduction = process.env.NODE_ENV === 'production'
 const LESS_NAME = isProduction ? '[hash:base64:8]' : '[name]_[local]_[hash:base64:4]'
 
 module.exports = {
-  entry: isProduction ? path.resolve(__dirname, '../src/prodIndex') : path.resolve(__dirname, '../src/devIndex'),
+  entry: isProduction ? path.resolve(__dirname, '../src/index') : path.resolve(__dirname, '../src/devIndex'),
   output: {
     path: path.resolve(__dirname, '../dist'),
     filename: 'index.js',

@@ -7,10 +7,8 @@ import App from '@/components/App'
 import '@kdcloudjs/kdesign/dist/kdesign.css'
 
 ReactDOM.render(
-  <>
     <div data-control-name="${CONTROL_NAME}">
       <App />
-    </div>
-  </>,
+    </div>,
   document.getElementById('root') as HTMLElement
 )
