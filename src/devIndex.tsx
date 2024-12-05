@@ -6,10 +6,8 @@ import ReactDOM from 'react-dom'
 import App from '@/components/App'
 
 ReactDOM.render(
-  <>
     <div data-control-name="${CONTROL_NAME}">
       <App />
-    </div>
-  </>,
+    </div>,
   document.getElementById('root') as HTMLElement
 )
