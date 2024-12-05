@@ -1,4 +1,4 @@
 import { createApp } from 'vue'
-import Index from './Index.vue'
+import Index from '@/components/Index.vue'
 
 createApp(Index).mount('#app')
