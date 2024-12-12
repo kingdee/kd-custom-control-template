@@ -38,9 +38,9 @@ yarn server
     |   |-- components - 组件
     |   |   |-- App.less
     |   |   |-- App.tsx
-    |   |-- types
+    |   |-- types - ts类型
     |   |   |-- index.d.ts
-    |   |-- utils
+    |   |-- utils - 公共方法
     |       |-- eventBus.ts
     |-- static
         |-- index.html - html模板文件
