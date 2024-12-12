@@ -51,7 +51,8 @@ declare global {
       console.log('-----destoryed', this.model)
     },
 
-    // 以下生命周期在V7.0.1+版本支持
+    // 以下生命周期在V7.0.4+版本支持
+    // 新版生命周期无法与旧版本update同时使用
 
     // onPropsUpdate: function (this: ComponentInstance, props: TCustomProps) {
     //   // 任意props数据变更时触发
