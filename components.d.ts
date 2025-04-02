@@ -8,8 +8,6 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     App: typeof import('./src/components/App.vue')['default']
-    ElOption: typeof import('element-plus/es')['ElOption']
-    ElSelect: typeof import('element-plus/es')['ElSelect']
     Index: typeof import('./src/components/Index.vue')['default']
   }
 }

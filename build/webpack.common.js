@@ -2,9 +2,6 @@ const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const isProduction = process.env.NODE_ENV === 'production'
 const { VueLoaderPlugin } = require("vue-loader");
-const AutoImport = require('unplugin-auto-import/webpack')
-const Components = require('unplugin-vue-components/webpack')
-const { ElementPlusResolver } = require('unplugin-vue-components/resolvers')
 
 module.exports = {
   entry: isProduction ? path.resolve(__dirname, '../src/index') : path.resolve(__dirname, '../src/devIndex'),
@@ -98,13 +95,7 @@ module.exports = {
     new MiniCssExtractPlugin({
       // 定义输出文件名和目录
       filename: 'css/index.css',
-    }),
-    AutoImport({
-      resolvers: [ElementPlusResolver()],
-    }),
-    Components({
-      resolvers: [ElementPlusResolver()],
-    }),
+    })
   ],
   cache: {
     type: 'filesystem',
