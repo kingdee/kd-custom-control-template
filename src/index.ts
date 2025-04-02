@@ -1,4 +1,4 @@
-import Vue from 'vue'
+import Vue from 'vue';
 import Index from '@/components/Index.vue'
 import eventBus from '@/utils/eventBus'
 import {
@@ -10,6 +10,10 @@ import {
   ILockUpdateProps,
   ComponentInstance,
 } from '@/types'
+import 'element-ui/lib/theme-chalk/index.css';
+import { Option, Select } from 'element-ui';
+Vue.use(Select)
+Vue.use(Option)
 
 declare global {
   interface Window {
@@ -38,7 +42,11 @@ declare global {
       eventBus.pub(this.model, 'update', props)
     },
 
-    handleDirective: function (customProps: TCustomProps, methodname: string, args: any[]) {
+    handleDirective: function (
+      customProps: TCustomProps,
+      methodname: string,
+      args: any[]
+    ) {
       // 这里的methodname 对应的是指令发过来定义的methodname，可根据方法名拿到对应的参数args
       console.log(customProps, methodname, args)
     },
@@ -56,7 +64,10 @@ declare global {
     //   eventBus.pub(this.model, 'onPropsUpdate', props)
     // },
 
-    // onThemeUpdate: function (this: ComponentInstance, props: IThemeUpdateProps) {
+    // onThemeUpdate: function (
+    //   this: ComponentInstance,
+    //   props: IThemeUpdateProps
+    // ) {
     //   // 主题变更时触发
     //   console.log('-----onThemeUpdate', this.model, props)
     //   eventBus.pub(this.model, 'onThemeUpdate', props)
@@ -83,6 +94,7 @@ declare global {
     //   // 单据体行数据变更时触发
     //   console.log('-----onGridRowDataUpdate', this.model, props)
     // },
+
   }
 
   const setHtml = (model: TCustomModel, customProps: TCustomProps) => {

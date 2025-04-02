@@ -4,15 +4,7 @@
   </div>
 </template>
 
-<script lang="ts">
-import App from '@/components/App.vue'
-
-export default {
-  name: 'Index',
-  props: {},
-  components: {
-    App,
-  },
-}
+<script setup lang="ts">
+import App from './App.vue'
 </script>
-<style scoped></style>
+
