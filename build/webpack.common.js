@@ -55,12 +55,21 @@ module.exports = {
         include: path.resolve(__dirname, '../src'),
       },
       {
-        test: /\.(png|svg|jpg|gif|woff|woff2|svg|eot|ttf)$/,
+        test: /\.(png|svg|jpg|gif|woff|woff2|eot|ttf|otf)$/,
         type: 'asset',
         parser: {
           dataUrlCondition: {
-            maxSize: 8192,
+            maxSize: 10 * 1024, // 小于10kb转base64位
           },
+        },
+      },
+      {
+        test:/.(mp4|webm|ogg|mp3|wav|flac|aac)$/, // 匹配媒体文件
+        type: "asset", // type选择asset
+        parser: {
+          dataUrlCondition: {
+            maxSize: 10 * 1024, // 小于10kb转base64位
+          }
         },
       },
     ],
