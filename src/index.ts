@@ -10,10 +10,6 @@ import {
   ILockUpdateProps,
   ComponentInstance,
 } from '@/types'
-import 'element-ui/lib/theme-chalk/index.css';
-import { Option, Select } from 'element-ui';
-Vue.use(Select)
-Vue.use(Option)
 
 declare global {
   interface Window {
