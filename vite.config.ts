@@ -15,10 +15,12 @@ export default defineConfig(({ mode }) => {
     entryFile = resolve(__dirname, 'src/index.ts') // 生产环境入口
   }
   return {
+    base: './',
     build: {
       rollupOptions: {
         input: entryFile,
         output: {
+          format: 'cjs',
           entryFileNames: 'index.js', // 自定义入口文件的输出名称
           // 对 CSS 文件以及其他静态资源的命名
           assetFileNames: ({ name }) => {
