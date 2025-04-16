@@ -104,7 +104,7 @@ declare global {
         },
         render() {
           return h(Index, {
-            props: { ...this.newCustomProps },
+             ...this.newCustomProps, model
           })
         },
         created() {
