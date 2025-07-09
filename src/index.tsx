@@ -8,7 +8,7 @@
  */
 
 import ReactDOM from 'react-dom'
-import App from '@/components/App'
+import { App } from "@/components/index";
 import eventBus from '@/utils/eventBus'
 import {
   IRoot,
@@ -20,7 +20,7 @@ import {
   ILockUpdateProps,
   ComponentInstance,
 } from '@/types'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, Suspense } from 'react'
 
 declare global {
   interface Window {
@@ -111,9 +111,11 @@ declare global {
           }
         }, [])
         return (
-          <div data-control-name="${CONTROL_NAME}">
-            <App model={model} customProps={newCustomProps} />
-          </div>
+          <Suspense fallback={null}>
+            <div data-control-name="${CONTROL_NAME}">
+              <App model={model} customProps={newCustomProps} />
+            </div>
+          </Suspense>
         )
       }
       ReactDOM.render(<Root model={model} customProps={customProps} />, model.dom)

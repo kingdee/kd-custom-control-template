@@ -9,6 +9,8 @@ module.exports = {
     path: path.resolve(__dirname, '../dist'),
     filename: 'index.js',
     clean: true,
+    asyncChunks: true, // 启用异步代码分割
+    chunkFilename: 'js/[name].[contenthash:8].js', // 异步代码分割的文件名格式
   },
   resolve: {
     alias: {
@@ -64,7 +66,7 @@ module.exports = {
         },
       },
       {
-        test:/.(mp4|webm|ogg|mp3|wav|flac|aac)$/, // 匹配媒体文件
+        test: /.(mp4|webm|ogg|mp3|wav|flac|aac)$/, // 匹配媒体文件
         type: "asset", // type选择asset
         parser: {
           dataUrlCondition: {
@@ -73,6 +75,22 @@ module.exports = {
         },
       },
     ],
+  },
+  optimization: {
+    sideEffects: true, // 启用副作用处理
+    splitChunks: {
+      chunks: 'async', // 只对异步加载的模块进行代码分割
+      minSize: 20000,
+      maxSize: 1000000,
+      cacheGroups: {
+        vendors: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendors',
+          priority: 10,
+          minSize: 0, // 不限制最小大小
+        },
+      },
+    }
   },
   plugins: [
     // 提取css成单独文件
