@@ -98,28 +98,26 @@ declare global {
   }
 
   var setHtml = function (model: TCustomModel, customProps: TCustomProps) {
-    KDApi.loadFile('./css/index.css', model, () => {
-      const Root = (props: IRoot) => {
-        const { model, customProps } = props
-        const [newCustomProps, setNewCustomProps] = useState(customProps)
-        useEffect(() => {
-          const updateSub = eventBus.sub(model!, 'update', (updateProps: any) => {
-            setNewCustomProps(updateProps)
-          })
-          return () => {
-            eventBus.unsub(updateSub)
-          }
-        }, [])
-        return (
-          <Suspense fallback={null}>
-            <div data-control-name="${CONTROL_NAME}">
-              <App model={model} customProps={newCustomProps} />
-            </div>
-          </Suspense>
-        )
-      }
-      ReactDOM.render(<Root model={model} customProps={customProps} />, model.dom)
-    })
+    const Root = (props: IRoot) => {
+      const { model, customProps } = props
+      const [newCustomProps, setNewCustomProps] = useState(customProps)
+      useEffect(() => {
+        const updateSub = eventBus.sub(model!, 'update', (updateProps: any) => {
+          setNewCustomProps(updateProps)
+        })
+        return () => {
+          eventBus.unsub(updateSub)
+        }
+      }, [])
+      return (
+        <Suspense fallback={null}>
+          <div data-control-name="${CONTROL_NAME}">
+            <App model={model} customProps={newCustomProps} />
+          </div>
+        </Suspense>
+      )
+    }
+    ReactDOM.render(<Root model={model} customProps={customProps} />, model.dom)
   }
 
   // 注册自定义组件
