@@ -1,0 +1,8 @@
+{
+    "modules": [
+        {
+            "dir": "src/modules"
+        },
+        { "dir": "node_modules/@kdcloudjs/kingdee-base-components/dist/src/modules" }
+    ]
+}

@@ -1,0 +1,11 @@
+{
+    "compilerOptions": {
+        "allowJs": true,
+        "experimentalDecorators": false,
+        "module": "ESNext",
+        "noEmit": true,
+        "skipLibCheck": true,
+        "strict": true,
+        "target": "esnext"
+    }
+}
