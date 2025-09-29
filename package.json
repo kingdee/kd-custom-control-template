@@ -3,6 +3,7 @@
     "version": "1.0.0",
     "description": "custom control template for KWC",
     "scripts": {
+        "start": "webpack serve --config build/webpack.dev.js",
         "dev": "webpack serve --config build/webpack.dev.js",
         "build": "webpack --config build/webpack.prod.js",
         "server": "nodemon --watch server server/index.js",
