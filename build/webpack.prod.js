@@ -18,7 +18,7 @@ if (localServer && (!isvId || !moduleId || !schemaId)) {
 
 module.exports = merge(common, {
   mode: 'production',
-  entry: path.resolve(__dirname, '../src/index.js'),
+  entry: [path.resolve(__dirname,'../src/modules/x/utils/kwc-shadow-injector.js'), path.resolve(__dirname, '../src/index.js')],
   watch: localServer,
   watchOptions: {
     ignored: /node_modules/, // 忽略某些目录

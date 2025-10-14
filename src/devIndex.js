@@ -1,4 +1,4 @@
-import '@kdcloudjs/kwc-synthetic-shadow';
+
 import { createElement } from '@kdcloudjs/kwc';
 
 (async () => {

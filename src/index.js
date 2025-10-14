@@ -1,4 +1,3 @@
-import '@kdcloudjs/kwc-synthetic-shadow';
 import { createElement } from '@kdcloudjs/kwc';
 
 (function (KDApi) {
@@ -33,6 +32,6 @@ import { createElement } from '@kdcloudjs/kwc';
 
     // 注册自定义组件
     KDApi.register('${CONTROL_NAME}', MyComponent, {
-        isMulLang: true
+        isMulLang: false
     });
 })(window.KDApi);
