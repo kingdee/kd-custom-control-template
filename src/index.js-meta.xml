@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<KingdeeComponentBundle
+    xmlns="http://dev.kingdee.com/2025/10/metadata"
+>
+    <name>${CONTROL_NAME}</name>
+    <masterLabel>${SOLUTION_NAME}</masterLabel>
+    <description>XXX组件说明</description>
+    <isv>${ISV_ID}</isv>
+    <moduleid>${MODULE_ID}</moduleid>
+    <acceptParent>MobFilterPanelAp,MobAdvFilterPanelAp</acceptParent>
+    <targets>
+        <target>BaseFormModel</target>
+        <target>BillFormModel</target>
+        <target>DynamicFormModel</target>
+    </targets>
+</KingdeeComponentBundle>
