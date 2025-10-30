@@ -40,6 +40,11 @@ module.exports = merge(common, {
     new CopyPlugin({
       patterns: [
         {
+          from: path.resolve(__dirname, '../src/index.js-meta.xml'),
+          to: path.resolve(__dirname, '../dist/index.js-meta.xml'),
+          noErrorOnMissing: true,
+        },
+        {
           from: path.resolve(__dirname, '../public'),
           to: path.resolve(__dirname, '../dist'),
           noErrorOnMissing: true,

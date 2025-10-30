@@ -1,10 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <KingdeeComponentBundle
     xmlns="http://dev.kingdee.com/2025/10/metadata"
 >
+    <version></version>
     <name>${CONTROL_NAME}</name>
     <masterLabel>${SOLUTION_NAME}</masterLabel>
-    <description>XXX组件说明</description>
+    <description></description>
     <isv>${ISV_ID}</isv>
     <moduleid>${MODULE_ID}</moduleid>
     <acceptParent>MobFilterPanelAp,MobAdvFilterPanelAp</acceptParent>
@@ -13,4 +14,10 @@
         <target>BillFormModel</target>
         <target>DynamicFormModel</target>
     </targets>
+    <targetConfigs>
+        <targetConfig>
+            <targets>BillFormModel, BaseFormModel,DynamicFormModel
+            </targets>
+        </targetConfig>
+    </targetConfigs>
 </KingdeeComponentBundle>

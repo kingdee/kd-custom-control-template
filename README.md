@@ -35,11 +35,12 @@ yarn server
     |-- src
     |   |-- devIndex.js - 本地启动入口文件，用于本地实时预览样式
     |   |-- index.js - 项目主要入口文件，与苍穹交互相关逻辑
-    |   |-- components - 组件
-    |   |   |-- [name]  - 组件命名空间
-    |   |       |-- App.html
-    |   |       |-- App.js
-    |   |       |-- App.css
+    |   |-- modules - 组件
+    |   |   |-- [namespace]  - 组件命名空间
+    |   |       |-- [controlName] 组件名
+    |   |           |-- [controlName].html
+    |   |           |-- [controlName].js
+    |   |           |-- [controlName].css
     |-- static
         |-- lang - 多语言词条
             |-- zh_CN.json

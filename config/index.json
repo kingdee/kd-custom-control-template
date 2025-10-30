@@ -1,6 +1,0 @@
-{
-    "backendUrl": "${BACKEND_URL}",
-    "datacenter": "${DATA_CENTER}",
-    "frontGitUrl": "${FRONT_GIT_URL}",
-    "backendGitUrl": "${BACKEND_GIT_URL}"
-}

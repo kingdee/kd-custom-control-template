@@ -1,7 +1,13 @@
+const fs = require('fs');
 const path = require('path');
 const webpack = require('webpack');
 const AutoInjectCssWebpackPlugin = require('@kdcloudjs/auto-inject-css-webpack-plugin');
 const KwcWebpackPlugin = require('@kdcloudjs/kwc-webpack-plugin');
+
+const injectCssFiles = [
+  path.resolve(__dirname, '../node_modules/@kdcloudjs/kingdee-base-components/dist/index.css')
+];
+const existingInjectCssFiles = injectCssFiles.filter(file => fs.existsSync(file));
 
 module.exports = {
     output: {
@@ -28,9 +34,9 @@ module.exports = {
     },
   
     plugins: [
-      new AutoInjectCssWebpackPlugin(
-        { files: [path.resolve(__dirname,'../node_modules/@kdcloudjs/kingdee-base-components/dist/index.css')] }
-      ),
+      ...(existingInjectCssFiles.length > 0
+      ? [new AutoInjectCssWebpackPlugin({ files: existingInjectCssFiles })]
+      : []),
       new KwcWebpackPlugin(),
       new webpack.NormalModuleReplacementPlugin(/^kd\/(.*)$/, (resource) => {
         const match = resource.request.match(/^kd\/(.*)$/);
