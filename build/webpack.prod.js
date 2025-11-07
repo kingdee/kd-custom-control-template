@@ -1,3 +1,4 @@
+const fs = require('fs');
 const path = require('path')
 const { merge } = require('webpack-merge');
 const common = require('./webpack.common.js');
@@ -9,6 +10,11 @@ const WebpackBar = require('webpackbar')
 const serverConfig = require('../server/config.js')
 
 const { isvId, moduleId, schemaId, localServer } = serverConfig
+
+let metaXMLFile = path.resolve(__dirname, '../src/${CONTROL_NAME}.js-meta.kwc')
+if (!fs.existsSync(metaXMLFile)) {
+  metaXMLFile = path.resolve(__dirname, '../src/index.js-meta.kwc')
+}
 
 // 检查配置文件中的值是否为空
 if (localServer && (!isvId || !moduleId || !schemaId)) {
@@ -40,8 +46,8 @@ module.exports = merge(common, {
     new CopyPlugin({
       patterns: [
         {
-          from: path.resolve(__dirname, '../src/index.js-meta.xml'),
-          to: path.resolve(__dirname, '../dist/index.js-meta.xml'),
+          from: metaXMLFile,
+          to: path.resolve(__dirname, '../dist/${CONTROL_NAME}.js-meta.kwc'),
           noErrorOnMissing: true,
         },
         {

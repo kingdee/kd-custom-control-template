@@ -6,6 +6,7 @@
         "start": "webpack serve --config build/webpack.dev.js",
         "dev": "webpack serve --config build/webpack.dev.js",
         "build": "webpack --config build/webpack.prod.js",
+        "build:silent": "webpack --config build/webpack.prod.js --no-stats",
         "server": "nodemon --watch server server/index.js",
         "lint": "eslint src/",
         "lint:fix": "eslint . --fix"
