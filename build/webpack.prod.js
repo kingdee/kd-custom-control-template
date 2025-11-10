@@ -27,7 +27,7 @@ module.exports = merge(common, {
   entry: [path.resolve(__dirname,'../src/modules/x/utils/kwc-shadow-injector.js'), path.resolve(__dirname, '../src/index.js')],
   watch: localServer,
   watchOptions: {
-    ignored: /node_modules/, // 忽略某些目录
+    ignored: /[\\/]node_modules[\\/]|[\\/]server[\\/]|[\\/]dist[\\/]/
   },
   optimization: {
     minimize: true,
