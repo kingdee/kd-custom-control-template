@@ -41,7 +41,39 @@ const getInstanceId = (m) => `${m.pageId}${CONNECTOR}${m.key}`;
         destoryed: function () {
             this._isDestroyed = true;
             ctxMap.delete(this.instanceId);
-        }
+        },
+        // 以下生命周期在V7.0.4+版本支持
+        // 新版生命周期无法与旧版本update同时使用
+
+        // onPropsUpdate: function (this: ComponentInstance, props: TCustomProps) {
+        //   // 任意props数据变更时触发
+        //   console.log('-----onPropsUpdate', this.model, props)
+        // },
+
+        // onThemeUpdate: function (this: ComponentInstance, props: IThemeUpdateProps) {
+        //   // 主题变更时触发
+        //   console.log('-----onThemeUpdate', this.model, props)
+        // },
+
+        // onDataUpdate: function (this: ComponentInstance, props: IDataUpdateProps) {
+        //   // 控件数据变更时触发
+        //   console.log('-----onDataUpdate', this.model, props)
+        // },
+
+        // onLockUpdate: function (this: ComponentInstance, props: ILockUpdateProps) {
+        //   // 控件锁定性变更时触发
+        //   console.log('-----onLockUpdate', this.model, props)
+        // },
+
+        // onCardRowDataUpdate: function (this: ComponentInstance, props: ICardRowDataUpdateProps) {
+        //   // 卡片行数据变更时触发
+        //   console.log('-----onCardRowDataUpdate', this.model, props)
+        // },
+
+        // onGridRowDataUpdate: function (this: ComponentInstance, props: IGridRowDataUpdateProps) {
+        //   // 单据体行数据变更时触发
+        //   console.log('-----onGridRowDataUpdate', this.model, props)
+        // },
     };
 
     // 注册自定义组件
