@@ -1,3 +1,4 @@
+
 import { createElement } from '@kdcloudjs/kwc';
 
 // 连接符
@@ -8,17 +9,17 @@ const getInstanceId = (m) => `${m.pageId}${CONNECTOR}${m.key}`;
 
 (function (KDApi) {
     function MyComponent (model) {
-        this._setModel(model);
-        this.instanceId = getInstanceId(model);
-        this._isDestroyed = false; // 异步加载完成前就可能被销毁
+        this._initInternalState(model);
     }
 
     MyComponent.prototype = {
-        _setModel: function (model) {
+        _initInternalState: function (model) {
             this.model = model;
+            this.instanceId = getInstanceId(model);
+            this._isDestroyed = false; // 异步加载完成前就可能被销毁
         },
         init: function (props) {
-            const ctx = { model: this.model, props, component: this };
+            const ctx = { model: this.model, props };
             ctxMap.set(this.instanceId, ctx);
             const { dom } = this.model;
             // 异步加载
@@ -50,7 +51,7 @@ const getInstanceId = (m) => `${m.pageId}${CONNECTOR}${m.key}`;
 })(window.KDApi);
 
 /**
- * 调用方唯一需要关心的 API
+ * 获取组件上下文信息
  * @param {string} instanceId  pageId__$$__componentId
  * @returns {object|null} 返回组件上下文，包含 model 和 props 属性；如果未找到对应上下文，则返回 null
  */
