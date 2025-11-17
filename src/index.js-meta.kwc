@@ -13,11 +13,50 @@
         <target>BaseFormModel</target>
         <target>BillFormModel</target>
         <target>DynamicFormModel</target>
+        <target>MobileBillFormModel</target>
+        <target>MobileFormModel</target>
     </targets>
     <targetConfigs>
         <targetConfig>
-            <targets>BillFormModel, BaseFormModel,DynamicFormModel
+          <targets>BaseFormModel,BillFormModel,DynamicFormModel,MobileBillFormModel,MobileFormModel
             </targets>
+            <!-- <property
+                description="文本类型属性"
+                name="StringValue"
+                caption="文本类型属性"
+                type="String"
+                length="25"
+                default="默认值">
+            </property>
+            <property
+                name="IntValue"
+                type="Integer"
+                caption="数值类型属性"
+                description="数值类型属性"
+                max="10"
+                min="2"
+                default="2" 
+            ></property>
+            <property
+                name="ComboValue"
+                type="Combo"
+                default="0"
+                caption="下拉列表类型属性"
+                description="下拉列表类型属性" >
+                <items>
+                    <item id="0" name="默认名称" />
+                    <item id="1" name="选项1" />
+                    <item id="2" name="选项2" />
+                </items>
+            </property>
+
+            <property name="BooleanValue"
+                type="Boolean"
+                caption="布尔类型属性"
+                description="布尔类型属性"
+                default="true" > 
+            </property> -->
+
         </targetConfig>
     </targetConfigs>
 </KingdeeComponentBundle>
