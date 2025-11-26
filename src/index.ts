@@ -95,6 +95,10 @@ declare global {
 
   const setHtml = (model: TCustomModel, customProps: TCustomProps) => {
     KDApi.loadFile('./css/index.css', model, () => {
+      const containerId = model.key + model.pageId
+      const container = document.createElement('div')
+      container.id = containerId
+      model.dom.appendChild(container)
       new Vue({
         el: model.dom,
         data: {
