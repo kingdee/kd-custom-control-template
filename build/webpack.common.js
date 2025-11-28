@@ -43,7 +43,7 @@ module.exports = {
         if (match) {
           resource.request = path.resolve(
             __dirname,
-            `../node_modules/@kdcloudjs/kingdee-base-components/dist/src/modules/kd/${match[1]}/${match[1]}.js`
+            `../node_modules/@kdcloudjs/kingdee-base-components/dist/esm/kd/${match[1]}.js`
           );
         }
       })
