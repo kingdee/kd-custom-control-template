@@ -8,7 +8,6 @@
     <description></description>
     <isv>${ISV_ID}</isv>
     <moduleid>${MODULE_ID}</moduleid>
-    <acceptParent>MobFilterPanelAp,MobAdvFilterPanelAp</acceptParent>
     <targets>
         <target>BaseFormModel</target>
         <target>BillFormModel</target>
