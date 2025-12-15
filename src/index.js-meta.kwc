@@ -5,7 +5,6 @@
     <version></version>
     <name>${CONTROL_NAME}</name>
     <masterLabel>${SOLUTION_NAME}</masterLabel>
-    <description></description>
     <isv>${ISV_ID}</isv>
     <moduleid>${MODULE_ID}</moduleid>
     <targets>
