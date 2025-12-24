@@ -41,7 +41,7 @@
         }
     },
     "dependencies": {
-        "@kdcloudjs/kingdee-base-components": "^0.0.3",
+        "@kdcloudjs/kingdee-base-components": "^0.0.4",
         "@kdcloudjs/kwc-shared-utils": "^0.0.3",
         "@kdcloudjs/kwc-webpack-plugin": "^1.0.1"
     }
