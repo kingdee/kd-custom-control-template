@@ -15,7 +15,6 @@
         "@kdcloudjs/auto-inject-css-webpack-plugin": "^1.0.0",
         "@kdcloudjs/eslint-config-kwc": "^1.0.2",
         "@kdcloudjs/eslint-plugin-kwc": "^1.0.2",
-        "@kdcloudjs/kwc": "1.0.1",
         "copy-webpack-plugin": "^12.0.2",
         "css-minimizer-webpack-plugin": "^7.0.2",
         "eslint": "^9.35.0",
@@ -41,7 +40,8 @@
         }
     },
     "dependencies": {
-        "@kdcloudjs/kingdee-base-components": "^0.0.4",
+        "@kdcloudjs/kwc": "1.0.1",
+        "@kdcloudjs/kingdee-base-components": "^0.0.5",
         "@kdcloudjs/kwc-shared-utils": "^0.0.3",
         "@kdcloudjs/kwc-webpack-plugin": "^1.0.1"
     }
