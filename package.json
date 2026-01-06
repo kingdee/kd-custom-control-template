@@ -40,9 +40,9 @@
         }
     },
     "dependencies": {
-        "@kdcloudjs/kwc": "1.0.1",
-        "@kdcloudjs/kingdee-base-components": "^0.0.6",
+        "@kdcloudjs/kwc": "1.0.0",
+        "@kdcloudjs/kingdee-base-components": "^0.0.7",
         "@kdcloudjs/kwc-shared-utils": "^0.0.3",
-        "@kdcloudjs/kwc-webpack-plugin": "^1.0.1"
+        "@kdcloudjs/kwc-webpack-plugin": "^1.0.0"
     }
 }
