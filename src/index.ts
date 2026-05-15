@@ -9,6 +9,8 @@ import {
   IDataUpdateProps,
   ILockUpdateProps,
   ComponentInstance,
+  ICardRowDataUpdateProps,
+  IGridRowDataUpdateProps,
 } from '@/types'
 
 declare global {
